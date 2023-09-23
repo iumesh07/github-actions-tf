@@ -2,6 +2,10 @@ name: First Workflow
 
 on: [push]
 
+defaults:
+    run:
+      shell: bash   #Even in windows bash will come as shell.
+      #working-directory: /var/
 jobs:
     run-shell-commands:
         runs-on: Ubuntu-latest
