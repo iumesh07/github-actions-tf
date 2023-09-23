@@ -12,3 +12,14 @@ jobs:
               run: |
                 pwd
                 date
+    parallel-job-macos:
+        runs-on: macOS-latest
+        steps:
+            - name: View SW version
+              run: sw_vers
+    dependant-job:
+        runs-on: windows-latest
+        needs: run-shell-commands
+        steps:
+            - name: Working directory
+              run: pwd
